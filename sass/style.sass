@@ -1,0 +1,208 @@
+@import 'normalize'
+@import 'reset'
+
+@font-face
+  font-family: 'Manrope'
+  src: url("../fonts/Manrope-Regular.woff2") format("woff2") 
+  src: url("../fonts/Manrope-Regular.ttf") format("truetype")
+  font-weight: 400
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Switzer'
+  src: url("../fonts/Switzer-Regular.woff2") format("woff2") 
+  src: url("../fonts/Switzer-Regular.ttf") format("truetype")
+  font-weight: 400
+  font-style: normal
+  font-display: swap
+
+html
+    background-color: #000000
+    font-family: 'Manrope'
+
+$gradient: linear-gradient(90deg, #1E58FC 0%, #A427EB 25%, #D914E4 50%, #E10FA3 75%, #F10419 100%)
+$primary-text-color: #FFFFFF
+$breakpoint-mobile: 768px
+$breakpoint-tablet: 1024px
+$max-width: 1300px
+
+.container
+    max-width: $max-width
+
+// header section
+
+.header
+    padding: 24px 0
+    &__container
+        height: 48px
+        margin: 0 auto
+        display: flex
+        align-items: center
+    &__logo
+        margin-right: 220px
+    &__nav
+        display: flex
+    &__nav-list
+        display: flex
+        align-items: center
+        margin-right: 220px
+    &__nav-item
+        margin-right: 42px
+        &:last-child
+            margin-right: 0px
+    &__link
+        text-decoration: none
+        font-size: 18px
+        color: $primary-text-color
+        display: inline-block
+        line-height: 1.5
+        background-image: $gradient
+        -webkit-background-clip: text
+        background-clip: text
+        transition: all 0.3s ease  
+        &:hover
+            color: transparent
+            background-image: $gradient
+    &__btn-container
+        width: 219px
+        display: flex
+        gap: 8px
+    &__login-btn-wrapper
+        width: 80px
+        height: 48px
+        background: $gradient
+        border-radius: 26px
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 1px
+        &--btn
+            width: 78px
+            height: 46px
+            font-family: 'Switzer'
+            color: $primary-text-color
+            cursor: pointer
+            font-size: 16px
+            font-weight: 400
+            border-radius: 24px
+            background-color: #0F0F0F
+            text-align: center
+            border: none
+            transition: background-color 0.3s ease
+            &:hover
+                background-color: rgba(#000000, 0.8)
+    &__registration-btn-wrapper
+        width: 127px
+        height: 46px
+        background: $gradient
+        border-radius: 26px
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 1px
+        &--btn
+            width: 125px
+            height: 44px
+            font-family: 'Switzer'
+            color: $primary-text-color
+            cursor: pointer
+            border-radius: 24px
+            background-color: #0F0F0F
+            text-align: center
+            border: none
+            transition: background-color 0.3s ease
+            &:hover
+                background-color: rgba(#000000, 0.8)  
+
+
+// small laptop
+@media (max-width: $max-width)
+    .container
+        width: 100%
+    .header
+        padding: 24px 24px
+        &__nav
+            position: fixed
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            top: 0
+            right: -100%
+            height: 100vh
+            background-color: black
+            width: 100%
+            transition: 1s all
+        &__nav-list
+            display: flex
+            flex-direction: column
+            margin-right: 0px
+        &__nav-item
+            margin:  0 auto
+            margin-bottom: 40px
+            &:last-child
+                margin: 0 auto
+        &__link
+            font-size: 32px
+        &__btn-container
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin: 0 auto
+            gap: 20px
+            width: 100%
+        &__registration-btn-wrapper, &__login-btn-wrapper
+            width: 250px
+            height: 56px
+            border-radius: 26px
+            &--btn
+                width: 248px
+                height: 54px
+                font-family: 'Switzer'
+                color: $primary-text-color
+                font-size: 24px
+            &:hover
+                background-color: rgba(#000000, 0.8)  
+    .hamburger
+        width: 30px
+        height: 14px
+        position: absolute
+        top: 40px
+        right: 30px
+        z-index: 30
+        cursor: pointer
+        span
+            height: 2px
+            width: 100%
+            display: block
+            background: white
+            margin-bottom: 4px
+            transition: 0.5s all
+            &:last-child
+                margin-bottom: 0px
+    .hamburger_active
+        span
+            margin-bottom: -2px 
+            &:nth-child(1)
+                transform: translateY(7px) rotate(-45deg)
+            &:nth-child(2)
+                display: none
+            &:nth-child(3)
+                transform: translateY(7px) rotate(45deg)
+    .nav_active
+        right: 0px
+
+    // mobile
+    @media (max-width: $breakpoint-mobile)
+
+
+
+    // tablet
+    @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet)
+
+
+
+                
+    
+
+        
