@@ -33,6 +33,47 @@ $gradient: linear-gradient(90deg, #1E58FC 0%, #A427EB 25%, #D914E4 50%, #E10FA3 
 $primary-text-color: #FFFFFF
 $max-width: 1300px
 
+@mixin btn-wrapper
+    width: 80px
+    height: 48px
+    background: $gradient
+    border-radius: 26px
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 1px
+    button
+        width: 78px
+        height: 46px
+        font-family: 'Switzer'
+        color: $primary-text-color
+        cursor: pointer
+        font-size: 16px
+        font-weight: 400
+        border-radius: 24px
+        background-color: #0F0F0F
+        text-align: center
+        border: none
+        transition: 0.5s ease
+        &:hover
+            background: $gradient
+
+@mixin highlight-text
+    width: 151px
+    height: 38px
+    border:  1px solid #3F3F3F
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 7px
+    border-radius: 20px
+    margin-bottom: 15px
+    p 
+        color: $primary-text-color
+    img 
+        width: 16px
+        height: 16px
+    
 .container
     max-width: $max-width
 
@@ -74,58 +115,19 @@ $max-width: 1300px
         width: 219px
         display: flex
         gap: 8px
-    &__login-btn-wrapper
-        width: 80px
-        height: 48px
-        background: $gradient
-        border-radius: 26px
-        display: flex
-        align-items: center
-        justify-content: center
-        padding: 1px
-        &--btn
-            width: 78px
-            height: 46px
-            font-family: 'Switzer'
-            color: $primary-text-color
-            cursor: pointer
-            font-size: 16px
-            font-weight: 400
-            border-radius: 24px
-            background-color: #0F0F0F
-            text-align: center
-            border: none
-            transition: background-color 0.3s ease
-            &:hover
-                background-color: rgba(#000000, 0.8)
-    &__registration-btn-wrapper
+    &__btn-wrapper
+        @include btn-wrapper()
+        margin-right: 10px
+    &__btn-wrapper--registration
+        @include btn-wrapper()
         width: 127px
-        height: 46px
-        background: $gradient
-        border-radius: 26px
-        display: flex
-        align-items: center
-        justify-content: center
-        padding: 1px
-        &--btn
+        button
             width: 125px
-            height: 44px
-            font-family: 'Switzer'
-            color: $primary-text-color
-            cursor: pointer
-            border-radius: 24px
-            background-color: #0F0F0F
-            text-align: center
-            border: none
-            transition: background-color 0.3s ease
-            &:hover
-                background-color: rgba(#000000, 0.8)  
-
-
 
 // main section
 .main-section
     position: relative
+    margin-bottom: 120px
     &__container
         margin: 0 auto
         display: flex
@@ -137,17 +139,7 @@ $max-width: 1300px
         padding: 48px 0 0 0 
         margin-right: 150px
     &__highlight-text
-        width: 151px
-        height: 38px
-        border: 1px solid #3F3F3F
-        display: flex
-        align-items: center
-        justify-content: center
-        gap: 7px
-        border-radius: 20px
-        margin-bottom: 15px
-        p
-            color: $primary-text-color
+        @include highlight-text()
     &__title
         color: $primary-text-color
         font-family: 'Manrope'
@@ -162,21 +154,25 @@ $max-width: 1300px
         line-height: 1.5
         margin-bottom: 43px
     &__controls
+        display: flex
+        align-items: center
         margin-bottom: 100px
         a
             color: $primary-text-color
             text-decoration: none
-    &__button--explore
-        width: 210px
-        height: 64px
+    &__btn-wrapper
+        @include btn-wrapper()
+        width: 208px
+        height: 62px
+        border-radius: 34px
         background: $gradient
-        color: $primary-text-color
-        border: none
-        border-radius: 30px
-        cursor: pointer 
-        font-family: 'Switzer'
-        font-size: 18px
-        margin-right: 10px
+        margin-right: 16px
+        button
+            font-size: 18px
+            width: 208px
+            height: 62px
+            border-radius: 34px
+            background: $gradient
     &__button--play
         width: 64px
         height: 64px
@@ -320,16 +316,14 @@ $max-width: 1300px
         font-weight: 600
         font-size: 40px
         margin-right: 40px
-    &__button--buy-now
-        width: 164px
+    &__btn-wrapper--buy
+        @include btn-wrapper()
+        width: 124px
         height: 48px
-        background: $gradient
-        color: $primary-text-color
-        border: none
-        border-radius: 30px
-        cursor: pointer 
-        font-family: 'Switzer'
-        font-size: 16px
+        button
+            width: 124px
+            height: 48px
+            background: $gradient
     // nft background
     &__backgroung-img
         position: absolute
@@ -343,14 +337,136 @@ $max-width: 1300px
         top: 580px
         left: 1px
         z-index: -5
-         
-
 .dot
     width: 2px
     height: 2px
     background-color: white
 
+// top trending section
+.trending-section
+    min-height: 810px
+    position: relative
+    &__container
+        margin: 0 auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        background: radial-gradient(ellipse, rgba(30, 88, 252, 0.5) 0%, rgba(164, 39, 235, 0.4) 20%, rgba(217, 20, 228, 0.2) 40%, rgba(225, 15, 163, 0.05) 60%, rgba(241, 4, 25, 0) 100%)
+        background-size: 100% 100%
+        background-position: center
+        background-repeat: no-repeat
+    &__highlight-text
+        @include highlight-text()
+    &__title
+        text-align: center
+        color:  $primary-text-color
+        font-weight: 600
+        font-size: 40px
+        line-height: 1.2
+        margin-bottom: 65px
+    &__block
+        display: flex
+        width: 100%
+        gap: 25px
+        margin-bottom: 45px
+    &__card
+        width: 416px
+        height: 586px
+        border-radius: 40px
+        border: 1px solid #3F3F3F
+        &-top
+            display: flex
+            justify-content: space-between
+            box-sizing: border-box
+            width: 416px
+            height: 420px
+            background-image: url('../img/nft-item1.png')
+            border-top-left-radius: 40px
+            border-top-right-radius: 40px
+            padding: 27px 27px 0 27px
+            &-timebg
+                border: 0.2px solid lightgrey
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 107px
+                height: 38px
+                background: rgba(217, 217, 217, 0.2)
+                backdrop-filter: blur(7px)
+                -webkit-backdrop-filter: blur(7px)
+                border-radius: 20px
+                span
+                    color: $primary-text-color
+                    font-size: 16px
+            &-likebg
+                border: 0.2px solid lightgrey
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 38px
+                height: 38px
+                background: rgba(217, 217, 217, 0.2)
+                backdrop-filter: blur(7px)
+                -webkit-backdrop-filter: blur(7px)
+                border-radius: 38px
+        &-footer
+            box-sizing: border-box
+            height: 166px
+            padding: 32px 25px 0 27px
+            background: rgba(25, 6, 32)
+            backdrop-filter: blur(3px)
+            -webkit-backdrop-filter: blur(3px)
+            border-bottom-left-radius: 40px
+            border-bottom-right-radius: 40px
+            &-main
+                display: flex
+                align-items: center
+                justify-content: space-between
+                margin-bottom: 30px
+                h1
+                    color: $primary-text-color
+                    font-size: 24px
+                    font-weight: 600
+                p
+                    color: $primary-text-color
+            &-price
+                display: flex
+                justify-content: space-between
+            &-pricebox
+                display: flex
+                flex-direction: column
+                gap: 15px
+                p
+                    color: $primary-text-color
+                div
+                    display: flex
+                    gap: 10px
+    &__btn-wrapper
+        @include btn-wrapper()
+        width: 40px
+        height: 40px
+        button
+            width: 38px
+            height: 38px
+            border: 38px
+            font-size: 30px
+    &__main-button
+        @include btn-wrapper()
+        width: 136px
+        height: 48px
+        button
+            background: $gradient
+            width: 136px
+            height: 48px
 
+
+.second
+    background-image: url('../img/nft-item2.png')
+.third
+    background-image: url('../img/nft-item3.png')
+
+    
+        
 
 
 
@@ -395,18 +511,13 @@ $max-width: 1300px
             margin: 0 auto
             gap: 20px
             width: 100%
-        &__registration-btn-wrapper, &__login-btn-wrapper
-            width: 250px
-            height: 56px
-            border-radius: 26px
-            &--btn
-                width: 248px
-                height: 54px
-                font-family: 'Switzer'
-                color: $primary-text-color
-                font-size: 24px
-            &:hover
-                background-color: rgba(#000000, 0.8)  
+        &__btn-wrapper, &__btn-wrapper--registration
+            @include btn-wrapper()
+            width: 200px
+            margin-right: 0px
+            padding: 0px
+            button
+                width: 198px
     .hamburger
         width: 30px
         height: 14px
@@ -436,7 +547,6 @@ $max-width: 1300px
     .nav_active
         right: 0px
         z-index: 1000
-    
     // main section
     .main-section
         position: relative
@@ -468,7 +578,21 @@ $max-width: 1300px
             display: flex
             justify-content: center
         &__img-brands
-            width: 750px
+            width: 100%
+
+    // top trending section
+    .trending-section
+        &__block
+            display: flex
+            flex-direction: column
+            align-items: center
+
+
+
+
+
+
+
 
 
 // tablet
@@ -506,18 +630,13 @@ $max-width: 1300px
             margin: 0 auto
             gap: 20px
             width: 100%
-        &__registration-btn-wrapper, &__login-btn-wrapper
-            width: 250px
-            height: 56px
-            border-radius: 26px
-            &--btn
-                width: 248px
-                height: 54px
-                font-family: 'Switzer'
-                color: $primary-text-color
-                font-size: 24px
-            &:hover
-                background-color: rgba(#000000, 0.8)  
+        &__btn-wrapper, &__btn-wrapper--registration
+            @include btn-wrapper()
+            width: 200px
+            margin-right: 0px
+            padding: 0px
+            button
+                width: 198px
     .hamburger
         width: 30px
         height: 14px
@@ -580,17 +699,25 @@ $max-width: 1300px
     // main section
     .main-section
         &__img-brands
-            width: 720px
+            width: 100%
+    // top trending section
+    .trending-section
+        &__block
+            display: flex
+            flex-direction: column
+            align-items: center
 
 
 
-    
 // mobile
 @media (max-width: 767px)
     .container
         width: 100%
     .header
-        padding: 24px 24px
+        padding: 12px 24px
+        &__logo
+            img
+                width: 120px
         &__nav
             position: fixed
             display: flex
@@ -601,7 +728,7 @@ $max-width: 1300px
             height: 100vh
             background-color: black
             width: 100%
-            transition: 1s all
+            transition: 0.5s all
         &__nav-list
             display: flex
             flex-direction: column
@@ -612,7 +739,7 @@ $max-width: 1300px
             &:last-child
                 margin: 0 auto
         &__link
-            font-size: 32px
+            font-size: 24px
         &__btn-container
             display: flex
             flex-direction: column
@@ -620,24 +747,18 @@ $max-width: 1300px
             margin: 0 auto
             gap: 20px
             width: 100%
-        &__registration-btn-wrapper, &__login-btn-wrapper
-            width: 250px
-            height: 56px
-            border-radius: 26px
-            &--btn
-                width: 248px
-                height: 54px
-                font-family: 'Switzer'
-                color: $primary-text-color
-                font-size: 24px
-            &:hover
-                background-color: rgba(#000000, 0.8)  
+        &__btn-wrapper, &__btn-wrapper--registration
+            @include btn-wrapper()
+            width: 200px
+            button
+                width: 198px
+                margin-right: 0px
     .hamburger
         width: 30px
         height: 14px
         position: absolute
-        top: 40px
-        right: 30px
+        top: 28px
+        right: 20px
         z-index: 3000
         cursor: pointer
         span
@@ -664,6 +785,7 @@ $max-width: 1300px
     // main section
     .main-section
         position: relative
+        margin-bottom: 50px
         &__container
             margin: 0 auto
             display: flex
@@ -671,7 +793,6 @@ $max-width: 1300px
             align-items: center
             margin-bottom: 0px
         &__main-wrapper
-            // width: 100%
             padding: 0
         &__info-wrapper
             width: 100%
@@ -683,114 +804,125 @@ $max-width: 1300px
             align-items: center
         &__title
             text-align: center
-            font-size: 32px
+            font-size: 40px
             margin-bottom: 20px
         &__description
-            width: 100%
             text-align: center
-            font-size: 16px
+            font-size: 18px
             margin-bottom: 20px
         &__controls
             display: flex   
             align-items: center
+            justify-content: space-around
             gap: 5px        
             margin-bottom: 20px
             a
                 font-size: 12px
-        &__button--explore
-            width: 120px
+        &__btn-wrapper
+            @include btn-wrapper()
+            width: 150px
             height: 42px
-            border-radius: 20px
-            font-size: 12px
-            margin-right: 1px
+            border-radius: 34px
+            margin-right: 16px
+            button
+                font-size: 14px
+                width: 150px
+                height: 42px
+                border-radius: 34px
         &__button--play
-            width: 32px
-            height: 32px
-            border-radius: 32px
-            margin-right: 1px    
-        &__stat-item
-            width: 80px
+            width: 40px
             height: 40px
+            border-radius: 40px
+        &__stat-item
+            width: 100px
+            height: 50px
             border-radius: 10px
-            margin-bottom: 20px
+            margin-bottom: 50px
         &__stat-number
-            font-size: 12px
+            font-size: 16px
         &__stat-label
-            font-size: 10px  
+            font-size: 12px  
         &__nft-wrapper
-            width: 300px
+            width: 360px
             display: flex
             justify-content: center
             padding: 0px     
-            margin-bottom: 20px 
+            margin-bottom: 30px 
         &__nft-block
-            width: 200px
-            height: 300px
+            width: 300px
+            height: 400px
         &__image-background
-            width: 198px
-            height: 198px
+            width: 298px
+            height: 398px
             img
-                width: 200px
+                width: 100%
         &__price--white
             position: absolute
-            top: 10px
-            right: 15px
-            width: 44px
-            height: 18px
+            top: 20px
+            right: 20px
+            width: 60px
+            height: 20px
             border-radius: 20px
             p
-                font-size: 10px
+                font-size: 14px
         &__info-background
-            width: 198px
-            height: 100px
-            padding: 10px
+            width: 298px
+            height: 102px
+            padding: 15px 30px 20px 25px
         &__info-title
             margin-bottom: 5px
         &__nft-title
-            font-size: 10px
+            font-size: 16px
             letter-spacing: 0.1px
         &__nft-kebab
-            width: 15px
-            height: 15px
-            border-radius: 15px
+            width: 20px
+            height: 20px
+            border-radius: 20px
             gap: 1px
         &__info-description
-            font-size: 10px
-            margin-bottom: 5px
+            font-size: 16px
+            margin-bottom: 8px
         &__info-pay
+            width: 100%
+            display: flex
+            align-items: center
             img
-                width: 20px
+                width: 30px
         &__dropdown-wrapper
-            margin-right: 5px
+            margin-right: 0px
             height: 30px
             &::after
                 content: ""
                 position: absolute
                 top: 50%
-                right: 10px
+                right: 15px
                 transform: translateY(-50%)
                 width: 0
                 height: 0
-                border-left: 3px solid transparent
-                border-right: 3px solid transparent
-                border-top: 3px solid white
+                border-left: 4px solid transparent
+                border-right: 4px solid transparent
+                border-top: 4px solid white
                 pointer-events: none
         &__custom-dropdown
             font-size: 10px
         &__info-price
-            font-size: 8px
-            margin-right: 6px
-        &__button--buy-now
-            width: 60px
-            height: 20px
-            font-size: 10px
-            font-weight: 400
-            border-radius: 15px
-            font-size: 10px
+            font-size: 12px
+            margin-right: 25px
+        &__btn-wrapper--buy
+            @include btn-wrapper()
+            width: 80px
+            height: 25px
+            button
+                width: 80px
+                height: 25px
+                font-size: 10px
+                font-weight: 400
+                border-radius: 15px
+                font-size: 10px
         &__backgroung-img
             width: 70px
-            top: 100px
-            left: 5%
+            top: 120px
+            left: -4px
         &__donut
             width: 100px
             top: 300px
@@ -799,15 +931,22 @@ $max-width: 1300px
             display: flex
             justify-content: center
         &__img-brands
-            width: 355px
+            width: 100%
     .dot
         width: 1px
         height: 1px
-
- 
-
-
+    // top trending section
+    .trending-section
+        &__block
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 50px
+        &__card
+            width: 316px
+            height: 486px
+            &-top
+                width: 316px
+                height: 320px
+                background-position: center
                 
-    
-
-        
