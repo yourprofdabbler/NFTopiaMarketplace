@@ -76,6 +76,7 @@ $max-width: 1300px
     
 .container
     max-width: $max-width
+    // border: 1px solid red
 
 // header section
 
@@ -465,8 +466,74 @@ $max-width: 1300px
 .third
     background-image: url('../img/nft-item3.png')
 
-    
-        
+// Getting started
+.getting-started
+    min-height: 837px
+    background: linear-gradient(to top right, rgba(30, 88, 252, 0) 0%, rgba(30, 88, 252, 0.1) 10%, rgba(164, 39, 235, 0.1) 35%, rgba(217, 20, 228, 0.1) 50%, rgba(225, 15, 163, 0.1) 72%, rgba(241, 4, 25, 0.1) 90%, rgba(241, 4, 25, 0) 100%)
+    background-size: 100% 100%
+    background-position: center
+    background-repeat: no-repeat
+    position: relative
+    &__container
+        margin: 0 auto
+        padding: 120px 0 0 0
+    &__header
+        margin-bottom: 55px
+    &__highlight-text
+        @include highlight-text()
+        width: 135px
+    &__text-block
+        display: flex
+        align-items: flex-end
+        h2
+            color: $primary-text-color
+            font-size: 40px
+            line-height: 1.3
+            letter-spacing: 0.6px
+            margin-right: 210px
+            z-index: 11
+        p
+            color: $primary-text-color
+            font-size: 18px
+            line-height: 1.7
+            z-index: 12
+    &__cards
+        display: flex
+        flex-wrap: wrap
+        gap: 25px
+    &__card
+        width: 416px
+        height: 294px
+        box-sizing: border-box
+        border: 1px solid #3F3F3F
+        border-radius: 40px
+        padding: 35px 10px 0 30px
+        z-index: 10
+        h3
+            color: $primary-text-color
+            font-size: 24px
+            letter-spacing: 0.4px
+            margin-bottom: 18px
+        p
+            color: $primary-text-color
+            font-size: 16px
+            line-height: 1.8
+    &__icon
+        width: 70px
+        height: 70px
+        border-radius: 70px
+        background: rgba(217, 217, 217, 0.2)
+        backdrop-filter: blur(7px)
+        -webkit-backdrop-filter: blur(7px)
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 35px 
+    &__bgimg
+        position: absolute
+        right: 1px
+        top: -20px
+
 
 
 
@@ -586,7 +653,31 @@ $max-width: 1300px
             display: flex
             flex-direction: column
             align-items: center
-
+    // getting started
+    .getting-started
+        &__container
+            padding: 70px 0 0 0
+        &__header
+            margin-bottom: 55px
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__text-block
+            display: flex
+            align-items: center
+            flex-direction: column
+            justify-content: center
+            h2
+                margin-right: 0px
+                text-align: center
+                margin-bottom: 30px
+            p
+                text-align: center
+        &__cards
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+    
 
 
 
@@ -706,6 +797,31 @@ $max-width: 1300px
             display: flex
             flex-direction: column
             align-items: center
+
+    // getting started
+    .getting-started
+        &__container
+            padding: 70px 0 0 0
+        &__header
+            margin-bottom: 55px
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__text-block
+            display: flex
+            align-items: center
+            flex-direction: column
+            justify-content: center
+            h2
+                margin-right: 0px
+                text-align: center
+                margin-bottom: 30px
+            p
+                text-align: center
+        &__cards
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
 
 
 
@@ -949,4 +1065,30 @@ $max-width: 1300px
                 width: 316px
                 height: 320px
                 background-position: center
+    // getting started
+    .getting-started
+        &__container
+            padding: 70px 0 0 0
+        &__header
+            margin-bottom: 55px
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__highlight-text
+            z-index: 30
+        &__text-block
+            display: flex
+            align-items: center
+            flex-direction: column
+            justify-content: center
+            h2
+                margin-right: 0px
+                text-align: center
+                margin-bottom: 30px
+            p
+                text-align: center
+        &__cards
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
                 
