@@ -474,6 +474,7 @@ $max-width: 1300px
     background-position: center
     background-repeat: no-repeat
     position: relative
+    margin-bottom: 120px
     &__container
         margin: 0 auto
         padding: 120px 0 0 0
@@ -534,13 +535,165 @@ $max-width: 1300px
         right: 1px
         top: -20px
 
+// Explore collection section
+.explore-collection
+    &__container
+        margin: 0 auto
+        background: radial-gradient(ellipse, rgba(30, 88, 252, 0.5) 0%, rgba(164, 39, 235, 0.4) 20%, rgba(217, 20, 228, 0.2) 40%, rgba(225, 15, 163, 0.05) 60%, rgba(241, 4, 25, 0) 100%)
+        background-size: 100% 100%
+        background-position: center
+        background-repeat: no-repeat
+    &__highlight-text
+        @include highlight-text()
+        width: 161px
+        height: 38px
+    &__header
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        margin-bottom: 60px
+        h2
+            font-size: 40px
+            font-weight: 600
+            color: $primary-text-color
+            line-height: 1.3
+    &__buttons
+        display: flex
+        gap: 12px
+    &__btn-wrapper--da
+        @include btn-wrapper()
+        width: 110px
+        button
+            width: 108px
+    &__btn-wrapper--clct
+        @include btn-wrapper()
+        width: 125px
+        button
+            width: 123px
+    &__btn-wrapper--msc
+        @include btn-wrapper()
+        width: 84px
+        button
+            width: 82px    
+    &__btn-wrapper--gmg
+        @include btn-wrapper()
+        width: 97px
+        button
+            width: 95px   
+    &__btn-wrapper--virt
+        @include btn-wrapper()
+        width: 143px
+        button
+            width: 141px   
+    &__cards
+        display: flex
+        gap: 25px
+        margin-bottom: 45px
+    &__big-card
+        width: 668px
+        height: 494px
+        background-image: url('../img/money-hand.png')
+        background-position: center
+        background-size: contain 
+        background-repeat: no-repeat 
+        padding: 40px
+        box-sizing: border-box
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        &-top
+            display: flex
+            gap: 10px
+            &-text
+                border: 0.2px solid lightgrey
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 10px 12px
+                background: rgba(217, 217, 217, 0.2)
+                backdrop-filter: blur(7px)
+                -webkit-backdrop-filter: blur(7px)
+                border-radius: 20px
+                span
+                    color: $primary-text-color
+                    font-size: 16px
+                    font-weight: 100
+        &-bottom
+            display: flex
+            justify-content: space-between
+            h2
+                color: $primary-text-color
+                font-size: 32px
+                font-weight: 600
+                line-height: 1.3
+            &-button
+                @include btn-wrapper()
+                width: 80px
+                height: 80px
+                border-radius: 80px
+                button
+                    background: $gradient
+    &__small-card
+        width: 290px
+        height: 494px
+        background-image: url('../img/anime-boy.png')
+        background-position: center
+        background-size: contain 
+        background-repeat: no-repeat 
+        padding: 30px
+        box-sizing: border-box
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        &-top
+            height: 50px
+            display: flex
+            justify-content: flex-end
+            &-button
+                @include btn-wrapper()
+                width: 50px
+                height: 50px
+                border-radius: 52px
+                background: rgba(217, 217, 217, 0.2)
+                backdrop-filter: blur(7px)
+                -webkit-backdrop-filter: blur(7px)
+                button
+                    width: 50px
+                    height: 50px
+                    border-radius: 52px
+                    background: rgba(217, 217, 217, 0.2)
+                    backdrop-filter: blur(7px)
+                    -webkit-backdrop-filter: blur(7px)
+                    &:hover
+                        background: rgba(217, 217, 217, 0.2)
+                    img
+                        width: 20px
+        h2
+            color: $primary-text-color
+            font-size: 24px
+            line-height: 1.4
+            letter-spacing: 1px
+    &__controls
+        display: flex
+        justify-content: center
+        gap: 20px
+        &-left
+            @include btn-wrapper()
+            width: 40px
+            height: 40px
+            button
+                width: 38px
+                height: 38px
+        &-right
+            @include btn-wrapper()
+            width: 40px
+            height: 40px
+            button
+                width: 38px
+                height: 38px
 
-
-
-
-
-
-
+.bull
+    background-image: url('../img/bull.png')
 
 
 // small laptop
@@ -677,7 +830,25 @@ $max-width: 1300px
             display: flex
             flex-wrap: wrap
             justify-content: center
-    
+    // Explore collection section
+    .explore-collection
+        &__container
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__header
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            margin-bottom: 60px    
+            gap: 25px
+            h2
+                text-align: center
+        &__cards
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
 
 
 
@@ -822,7 +993,25 @@ $max-width: 1300px
             display: flex
             flex-wrap: wrap
             justify-content: center
-
+    // Explore collection section
+    .explore-collection
+        &__container
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__header
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            margin-bottom: 60px    
+            gap: 25px
+            h2
+                text-align: center
+        &__cards
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
 
 
 // mobile
@@ -1053,6 +1242,7 @@ $max-width: 1300px
         height: 1px
     // top trending section
     .trending-section
+        margin-bottom: 50px
         &__block
             display: flex
             flex-direction: column
@@ -1067,6 +1257,7 @@ $max-width: 1300px
                 background-position: center
     // getting started
     .getting-started
+        margin-bottom: 50px
         &__container
             padding: 70px 0 0 0
         &__header
@@ -1091,4 +1282,56 @@ $max-width: 1300px
             display: flex
             flex-wrap: wrap
             justify-content: center
-                
+        &__card
+            width: 90%
+            height: 294px
+            box-sizing: border-box
+            border: 1px solid #3F3F3F
+            border-radius: 40px
+            padding: 35px 10px 0 30px
+            z-index: 10
+            h3
+                color: $primary-text-color
+                font-size: 18px
+                letter-spacing: 0.4px
+                margin-bottom: 12px
+            p
+                color: $primary-text-color
+                font-size: 14px
+                line-height: 1.4
+    // Explore collection section
+    .explore-collection
+        &__container
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__header
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            margin-bottom: 60px    
+            gap: 25px
+            h2
+                text-align: center
+        &__cards
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            margin-bottom: 20px
+        &__buttons
+            flex-wrap: wrap
+            justify-content: center
+        &__big-card
+            width: 90%
+            height: 250px
+            flex-direction: column
+            justify-content: space-between
+            gap: 10px
+            &-bottom
+                h2
+                    font-size: 22px
+                &-button
+                    @include btn-wrapper()
+                    width: 40px
+                    height: 40px
