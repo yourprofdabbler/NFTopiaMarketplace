@@ -786,9 +786,78 @@ $max-width: 1300px
             width: 148px
             height: 46px
 
-
-        
-
+// Footer
+.footer
+    position: relative
+    padding-top: 120px 
+    &__container
+        opacity: 0.9
+        margin: 0 auto
+    &__main-block
+        width: 100%
+        height: 378px
+        border: 1px solid #3F3F3F
+        border-radius: 40px
+        background: #0D0511
+        padding: 52px
+        box-sizing: border-box
+        margin-bottom: 30px
+    &__content-block
+        display: flex
+        margin-bottom: 10px
+    &__logo-block
+        margin-right: 290px
+    &__logo
+        img
+            margin-bottom: 35px
+    &__descr
+        color: $primary-text-color
+        font-size: 18px
+        line-height: 1.5
+    &-links
+        padding-top: 5px
+        box-sizing: border-box
+        h2
+            color: $primary-text-color
+            font-size: 24px
+            letter-spacing: 0.5px
+            margin-bottom: 40px
+        a
+            text-decoration: none
+            color: $primary-text-color
+            font-size: 18px
+        li
+            margin-bottom: 25px
+            &:last-child
+                margin-bottom: 0px
+    &-first
+        margin-right: 125px
+    &-second
+        margin-right: 110px
+    &__btns
+        display: flex
+        justify-content: space-between
+        button
+            cursor: pointer
+            border: none
+            width: 48px
+            height: 48px
+            border-radius: 48px
+            background: rgba(217, 217, 217, 0.2)
+            backdrop-filter: blur(7px)
+            -webkit-backdrop-filter: blur(7px)
+            margin-right: 12px
+            &:hover
+                background: $gradient
+    &-lasttext
+        color: $primary-text-color
+        text-align: center
+        font-family: 'Switzer'
+        font-size: 18px
+    &-bgimg
+        position: absolute
+        top: 10px
+        z-index: -1
 // small laptop
 @media (min-width: 1024px) and (max-width: 1310px)
     .container
@@ -956,14 +1025,13 @@ $max-width: 1300px
             align-items: center
         &__title, &__description
             text-align: center
-
-
-
-
-
-
-
-
+    // Footer
+    .footer
+        &__logo-block
+            margin-right: 150px
+        &__logo
+            img
+                margin-bottom: 25px
 
 // tablet
 @media (min-width: 767px) and (max-width: 1023px)
@@ -1134,7 +1202,63 @@ $max-width: 1300px
             align-items: center
         &__title, &__description
             text-align: center
-
+    // Footer
+    .footer
+        padding-top: 60px 
+        &__container
+            margin: 0 auto
+        &__main-block
+            margin: 0 auto
+            width: 90%
+            height: 320px
+            padding: 25px
+            margin-bottom: 10px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+        &__content-block
+            display: flex
+            justify-content: space-between
+            margin-bottom: 0px
+        &__logo-block
+            margin-right: 0px
+        &__logo
+            img
+                margin-bottom: 25px
+        &__descr
+            font-size: 12px
+        &-links
+            padding-top: 5px
+            h2
+                font-size: 16px
+                margin-bottom: 40px
+            a
+                font-size: 12px
+            li
+                margin-bottom: 25px
+                &:last-child
+                    margin-bottom: 0px
+        &-first
+            margin-right: 0px
+        &-second
+            margin-right: 0px
+        &__btns
+            display: flex
+            justify-content: space-between
+            button
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 38px
+                height: 38px
+                border-radius: 38px
+                margin-right: 12px
+                &:hover
+                    background: $gradient
+        &-lasttext
+            font-size: 12px
+        &-bgimg
+            width: 50%
 
 // mobile
 @media (max-width: 767px)
@@ -1487,5 +1611,75 @@ $max-width: 1300px
                 width: 90%
             &__anything
                 width: 90%
-
-        
+    // Footer
+    .footer
+        padding-top: 30px 
+        &__container
+            margin: 0 auto
+        &__main-block
+            margin: 0 auto
+            width: 95%
+            height: 200px
+            padding: 25px
+            margin-bottom: 10px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+        &__content-block
+            display: flex
+            justify-content: space-between
+            margin-bottom: 0px
+        &__logo-block
+            width: 100px
+            margin-right: 0px
+        &__logo
+            img
+                width: 70%
+                margin-bottom: 12px
+        &__descr
+            font-size: 8px
+            line-height: 1.5
+        &-links
+            padding-top: 5px
+            box-sizing: border-box
+            h2
+                font-size: 12px
+                margin-bottom: 10px
+            a
+                text-decoration: none
+                font-size: 8px
+            li
+                margin-bottom: 5px
+                &:last-child
+                    margin-bottom: 0px
+        &-first
+            margin-right: 0px
+        &-second
+            margin-right: 0px
+        &__btns
+            display: flex
+            justify-content: space-between
+            button
+                display: flex
+                justify-content: center
+                align-items: center
+                cursor: pointer
+                border: none
+                width: 28px
+                height: 28px
+                border-radius: 28px
+                background: rgba(217, 217, 217, 0.2)
+                backdrop-filter: blur(7px)
+                -webkit-backdrop-filter: blur(7px)
+                margin-right: 12px
+                img
+                    width: 10px
+                &:hover
+                    background: $gradient
+        &-lasttext
+            font-size: 12px
+        &-bgimg
+            width: 30%
+            position: absolute
+            top: 10px
+            z-index: -1
